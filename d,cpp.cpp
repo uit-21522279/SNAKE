@@ -20,16 +20,15 @@ void options();
 void difficulty();
 void pause();
 
-int lenght; //several variables
+int lenght; 
 char contr='n';
 int chek[32][22];
-double diff=0.5; //difficulty variable, how fast snake moves (default-normal(0.5 sec)
-
+double diff=0.5; 
 int main()
 {
-    srand(time(0)); //seeding random numb gen
+    srand(time(0)); 
     int i;
-    char sl; //selection variable
+    char sl; 
     for(i=0;i<9999;i++)
     {
         if(i>0)
@@ -44,15 +43,15 @@ int main()
             }
             else goto quit;
         }
-        start: //starting program
+        start: 
         {
-            menu(); //showing menu screen
+            menu(); 
         }
-        cin>>sl; //selections for playing,options and exit
+        cin>>sl; 
         if(sl=='1')
         {
-            system("cls"); //clears screen
-            game(); //calling game function, starting game
+            system("cls"); 
+            game(); 
             i=1;
         }
         else if(sl=='2')
@@ -97,10 +96,9 @@ void table(char s[][22],int score)  //function for showing table (screen in whic
 }
 
 void game()
-{
-    char s[32][22]; //a 2-dimensional array for storing all particles in the screen;
-    int temp[32][22]; //an array for numbering snake parts and storing them
-    int i,j,fx,fy,x,y,score=0,highscore=score; //several variables
+{   char s[32][22]; 
+    int temp[32][22]; 
+    int i,j,fx,fy,x,y,score=0,highscore=score; 
     double k;
     int eating; //if snake eats food, this becomes 1, and snake gains lenght
     //preparations for game: setting table borders
@@ -416,16 +414,16 @@ void endgame(int score,int highscore) //just some screens for certain actions
 
 void menu()
 {
-    cout<<""<<endl;
-    cout<<" -----------------------------------------------  "<<endl;
-    cout<<"|                                               | "<<endl;
-    cout<<"|    ******   *     *      *     *  *  *****    | "<<endl;
-    cout<<"|   *         * *   *     * *    * *   *        | "<<endl;
-    cout<<"|    ******   *  *  *    *   *   **    ****     | "<<endl;
-    cout<<"|          *  *   * *   *******  * *   *        | "<<endl;
-    cout<<"|    ******   *     *  *       * *  *  *****    | "<<endl;
-    cout<<"|                                               | "<<endl;
-    cout<<" -----------------------------------------------  "<<endl;
+    cout<<"                                                                                                                                                      "<<endl;
+    cout<<" ---------------------------------------------------------------------------------------------------------------------------------------------------- | "<<endl;
+    cout<<"|                                                                                                                                                     | "<<endl;
+    cout<<"|  *         * ****** *      ****   ****  **   ** *****   ***** ****    *****  **    *     **     *  * *****    ****       **     **   ** *****       | "<<endl;
+    cout<<"|   *       *  *      *     *      *    * * * * * *         *  *    *  *       * *   *    *  *    * *  *       *          *  *    * * * * *           | "<<endl;
+    cout<<"|    *  *  *   ****   *     *      *    * *  *  * ****      *  *    *   *****  *  *  *   *    *   **   ****    *   ***   *    *   *  *  * ****        | "<<endl;
+    cout<<"|     * * *    *      *     *      *    * *     * *         *  *    *        * *   * *  ********  * *  *       *   * *  ********  *     * *           | "<<endl;
+    cout<<"|      * *     ****** *****  ****   ****  *     * *****     *   ****    *****  *    ** *        * *  * *****     ****  *        * *     * *****       | "<<endl;
+    cout<<"|                                                                                                                                                     | "<<endl;
+    cout<<" ------------------------------------------------------------------------------------------------------------------------------------------------------  "<<endl;
     cout<<""<<endl<<endl;
     cout<<"                     M E N U:    "<<endl<<endl;
     cout<<"                  1: Start Game  "<<endl<<endl;
@@ -456,6 +454,25 @@ void help()
     else system("cls");
     }
 }
+
+void credits()
+{
+    char sel;
+    system("cls");
+    while(true)
+    {
+    cout<<""<<endl<<endl;
+    cout<<"               Lead programmer: hakeris1010 "<<endl<<endl;
+    cout<<"               Designer: hakeris1010 "<<endl<<endl;
+    cout<<"               Testers: hakeris1010 "<<endl<<endl;
+    cout<<"               Special thanks to: hakeris1010 "<<endl<<endl<<endl;
+    cout<<"Go back? [y/n]  ";
+    cin>>sel;
+    if(sel=='y') return;
+    else system("cls");
+    }
+}
+
 void options()
 {
     char sel;
@@ -467,11 +484,13 @@ void options()
     cout<<"                          O P T I O N S:      "<<endl<<endl;
     cout<<"                       1: Choose Difficulty   "<<endl<<endl;
     cout<<"                       2: Controls            "<<endl<<endl;
-    cout<<"                       3: Go Back             "<<endl<<endl;
+    cout<<"                       3: Credits             "<<endl<<endl;
+    cout<<"                       4: Go Back             "<<endl<<endl;
     cin>>sel;
     if(sel=='1') difficulty();
     else if(sel=='2') help();
-    else if(sel=='3') return;
+    else if(sel=='3') credits();
+    else if(sel=='4') return;
     else system("cls");
     }
 }
@@ -483,31 +502,46 @@ void difficulty() //function for setting difficulty (how fast snake moves
     while(true)
     {
     cout<<""<<endl<<endl;
+    cout<<"          C U R R E N T   D I F F I C U L T Y:"<<endl<<endl;
+    if(diff==1) cout<<"                         E A S Y"<<endl<<endl;
+    else if(diff==0.5) cout<<"                       N O R M A L"<<endl<<endl;
+    else if(diff==0.2) cout<<"                         H A R D"<<endl<<endl;
+    else if(diff==0.1) cout<<"                 S U P E R   H A R D"<<endl<<endl;
+    else if(diff==0.03) cout<<"                 I M P O S S I B L E"<<endl<<endl;
     cout<<"          C H O O S E   D I F F I C U L T Y :"<<endl<<endl;
     cout<<"                       1: Easy        "<<endl<<endl;
     cout<<"                       2: Normal      "<<endl<<endl;
     cout<<"                       3: Hard        "<<endl<<endl;
-    cout<<"                       4: Go back       "<<endl<<endl;    
+    cout<<"                       4: Super Hard  "<<endl<<endl;
+    cout<<"                       5: Impossible  "<<endl<<endl<<endl<<endl;
+    cout<<"                       6: Go Back     "<<endl<<endl;
     cin>>sel;
-     if(sel=='1')
+    if(sel=='1')  //there are 5 ready difficulties
     {
-        diff=0.5;
+        diff=1;
         system("cls");
-        return;
     }
     else if(sel=='2')
     {
-        diff=0.1;
+        diff=0.5;
         system("cls");
-        return;
     }
     else if(sel=='3')
     {
-        diff=0.05;
+        diff=0.2;
         system("cls");
-        return;
     }
-    else if(sel=='4') return;
+    else if(sel=='4')
+    {
+        diff=0.1;
+        system("cls");
+    }
+    else if(sel=='5')
+    {
+        diff=0.03;
+        system("cls");
+    }
+    else if(sel=='6') return;
     else system("cls");
     }
 }
