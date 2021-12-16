@@ -246,7 +246,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                     if(temp[x][y]==i && s[x][y]=='o')
                     {
                         movecheck:
-                        if(contr!='8' && contr!='2' && contr!='4' && contr!='6') //if no control button is pressed,
+                        if(contr!='z' && contr!='w' && contr!='a' && contr!='d') //if no control button is pressed,
                         {                                                       //snake just moves in its direction forward
                         s[x][y]='*'; temp[x][y]=i+1;
                         if(temp[x-1][y]==i+2) //several situations
@@ -270,7 +270,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                             return;
                         }
                         }
-                        else if(contr=='8') //if control buttons are pressed, snake moves to that direction
+                        else if(contr=='w') //if control buttons are pressed, snake moves to that direction
                         {
                             if(temp[x][y-1]==0) //if the value of the square in front of snake's head equals 0
                             {                   //snake can move to it
@@ -284,7 +284,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                                 goto movecheck;
                             }
                         }
-                        else if(contr=='2')
+                        else if(contr=='a')
                         {
                             if(temp[x][y+1]==0)
                             {
@@ -298,7 +298,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                                 goto movecheck;
                             }
                         }
-                        else if(contr=='4')
+                        else if(contr=='d')
                         {
                             if(temp[x-1][y]==0)
                             {
@@ -312,7 +312,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                                 goto movecheck;
                             }
                         }
-                        else if(contr=='6')
+                        else if(contr=='z')
                         {
                             if(temp[x+1][y]==0)
                             {
@@ -441,11 +441,11 @@ void help()
     {
     cout<<" ----------------------------------------------"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                     8 - up                   |"<<endl;
+    cout<<"|                     w - up                   |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|            4 - left        6 - right         |"<<endl;
+    cout<<"|            a - left        d - right         |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    2 - down                  |"<<endl;
+    cout<<"|                    z - down                  |"<<endl;
     cout<<"|                                              |"<<endl;
     cout<<"|                    0 - Pause                 |"<<endl;
     cout<<"|                                              |"<<endl;
