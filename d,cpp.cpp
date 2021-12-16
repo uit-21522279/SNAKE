@@ -38,7 +38,7 @@ int main()
             cin>>sl;
             if(sl=='y')
             {
-                system("cls"); //clearing screen
+                system("cls");
                 goto start;
             }
             else goto quit;
@@ -78,9 +78,9 @@ int main()
 }
 
 
-void table(char s[][22],int score)  //function for showing table (screen in which snake moves
+void table(char s[][22],int score)  s
 {
-    int x=32; //i am using coordinates for displaying the table
+    int x=32;
     int y=22;
     int i,j;
     for(i=0;i<y;i++)
@@ -100,8 +100,7 @@ void game()
     int temp[32][22]; 
     int i,j,fx,fy,x,y,score=0,highscore=score; 
     double k;
-    int eating; //if snake eats food, this becomes 1, and snake gains lenght
-    //preparations for game: setting table borders
+    int eating;
     for(i=0;i<22;i++)
     {
         for(j=0;j<32;j++)
@@ -111,15 +110,15 @@ void game()
             if(j==0 || j==31) s[j][i]='|';
         }
     }
-    spawnFood(s,fx,fy); //calling food spawn function
+    spawnFood(s,fx,fy); 
     for(y=1;y<21;y++)
     {
         for(x=1;x<31;x++)
         {
-            temp[x][y]=0; //setting all the temp values to 0,
-        }                 //to see where snake parts are, and where nothing (0);
+            temp[x][y]=0; 
+        }                 
     }
-    s[17][10]='o'; //finally, sets primary snake position. o is head.
+    s[17][10]='o';
     s[16][10]='*';
     s[15][10]='*';
 
@@ -128,56 +127,55 @@ void game()
     temp[17][10]=1;
 
     system("cls");
-    table(s,score); //calling table function to show a table
-    lenght=3; //snake primary lenght
-
-    while(true) //game starts
+    table(s,score);
+    lenght=3; 
+    while(true) 
     {
-        eating=0; //setting value to 0, because snake hasnt eaten anything
-        Sleep(diff*1000); //delaying some time, how fast snake moves depends on difficulty
-        if(kbhit()) //checking if some key is pressed
+        eating=0; 
+        Sleep(diff*1000);
+        if(kbhit()) 
         {
-            contr=getch(); //if pressed, getting info about that key. this is needed for snake controls
-            if(contr=='s') pause(); //if 0, pauses game
-            goto movemake; //starts making snake moves
+            contr=getch(); 
+            if(contr=='s') pause(); 
+            goto movemake; 
         }
         else
         {
-            goto movemake; //if no key is pressed, snake just moves
+            goto movemake; 
         }
         movemake:
         {
-            for(x=1;x<31;x++) //a loop for checking where are snake parts
+            for(x=1;x<31;x++) 
             {
                 for(y=1;y<21;y++)
                 {
                     if(s[x][y]=='*')
                     {
-                        chek[x][y]=1; //this is needed for checking if snake hits its tail or borders
+                        chek[x][y]=1; 
                     }
                     else chek[x][y]=0;
                 }
             }
-            if(checkFood(s,fx,fy)==true) //if snake eats something, some info needs to be sent for snake to gain lenght
+            if(checkFood(s,fx,fy)==true)
             {
                 eating=1;
                 score=score+1;
-                controls(s,temp,eating); //calling snake control and movement function
+                controls(s,temp,eating);
                 spawnFood(s,fx,fy);
             }
             else
             {
-                controls(s,temp,eating); //snake only moves
+                controls(s,temp,eating);
             }
 
-            if(gameover(s,temp)==true) goto gameEnd; //if snake has hit something, game terminates
+            if(gameover(s,temp)==true) goto gameEnd; 
             else
             {
                 goto LoopEnd;
             }
         }
 
-        LoopEnd: //when loop ends, screen clears, updated table and score shows
+        LoopEnd: 
         {
             system("cls");
             table(s,score);
@@ -186,16 +184,16 @@ void game()
     }
     gameEnd:
     {
-        endgame(score,highscore); //calls endgame screen
-        return; //returns to int main
+        endgame(score,highscore);
+        return;
     }
 }
-void controls(char s[][22],int temp[][22],int eating) //finally, the coolest part :)
+void controls(char s[][22],int temp[][22],int eating) 
 {
     int i,x,y;
-    for(i=lenght;i>0;i--) //snake starts moving from tail to head
+    for(i=lenght;i>0;i--) 
     {
-        if(i==lenght) //when i equals to the number of snakes last part
+        if(i==lenght) 
         {
             for(x=1;x<31;x++)
             {
@@ -220,8 +218,8 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                 }
             }
         }
-        else if(i>1 && i<lenght) // all other snake parts stays where they are, but
-        {                        // their values (temp) will increase by 1
+        else if(i>1 && i<lenght) 
+        {
             for(x=1;x<31;x++)
             {
                 for(y=1;y<21;y++)
@@ -235,7 +233,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                 }
             }
         }
-        else if(i==1) //the hardest part, when i is equal to snake's head value.
+        else if(i==1) 
         {
             for(x=1;x<31;x++)
             {
@@ -244,13 +242,13 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                     if(temp[x][y]==i && s[x][y]=='o')
                     {
                         movecheck:
-                        if(contr!='z' && contr!='w' && contr!='a' && contr!='d') //if no control button is pressed,
-                        {                                                       //snake just moves in its direction forward
+                        if(contr!='z' && contr!='w' && contr!='a' && contr!='d') 
+                        {                                                    
                         s[x][y]='*'; temp[x][y]=i+1;
-                        if(temp[x-1][y]==i+2) //several situations
+                        if(temp[x-1][y]==i+2) 
                         {
                             s[x+1][y]='o'; temp[x+1][y]=1;
-                            return; //when snake moves its head, loop ends, we return to void game
+                            return; 
                         }
                         else if(temp[x+1][y]==i+2)
                         {
@@ -268,10 +266,10 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                             return;
                         }
                         }
-                        else if(contr=='w') //if control buttons are pressed, snake moves to that direction
+                        else if(contr=='w')
                         {
-                            if(temp[x][y-1]==0) //if the value of the square in front of snake's head equals 0
-                            {                   //snake can move to it
+                            if(temp[x][y-1]==0) 
+                            {                  
                             s[x][y]='*'; temp[x][y]=i+1;
                             s[x][y-1]='o'; temp[x][y-1]=1;
                             return;
