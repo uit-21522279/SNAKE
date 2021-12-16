@@ -454,25 +454,6 @@ void help()
     else system("cls");
     }
 }
-
-void credits()
-{
-    char sel;
-    system("cls");
-    while(true)
-    {
-    cout<<""<<endl<<endl;
-    cout<<"               Lead programmer: hakeris1010 "<<endl<<endl;
-    cout<<"               Designer: hakeris1010 "<<endl<<endl;
-    cout<<"               Testers: hakeris1010 "<<endl<<endl;
-    cout<<"               Special thanks to: hakeris1010 "<<endl<<endl<<endl;
-    cout<<"Go back? [y/n]  ";
-    cin>>sel;
-    if(sel=='y') return;
-    else system("cls");
-    }
-}
-
 void options()
 {
     char sel;
@@ -484,13 +465,11 @@ void options()
     cout<<"                          O P T I O N S:      "<<endl<<endl;
     cout<<"                       1: Choose Difficulty   "<<endl<<endl;
     cout<<"                       2: Controls            "<<endl<<endl;
-    cout<<"                       3: Credits             "<<endl<<endl;
-    cout<<"                       4: Go Back             "<<endl<<endl;
+    cout<<"                       3: Go Back             "<<endl<<endl;
     cin>>sel;
     if(sel=='1') difficulty();
     else if(sel=='2') help();
-    else if(sel=='3') credits();
-    else if(sel=='4') return;
+    else if(sel=='3') return;
     else system("cls");
     }
 }
