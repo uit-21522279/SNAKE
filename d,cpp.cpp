@@ -1,13 +1,11 @@
-#include <iostream> // including required headers
+#include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <conio.h>
 #include <windows.h>
 #include <fstream>
 #include <iomanip>
-
 using namespace std;
-//several functions for certain operations
 void menu();
 void game();
 void controls(char s[][22],int temp[][22],int eating);
