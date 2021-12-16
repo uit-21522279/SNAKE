@@ -284,7 +284,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                                 goto movecheck;
                             }
                         }
-                        else if(contr=='a')
+                        else if(contr=='z')
                         {
                             if(temp[x][y+1]==0)
                             {
@@ -298,7 +298,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                                 goto movecheck;
                             }
                         }
-                        else if(contr=='d')
+                        else if(contr=='a')
                         {
                             if(temp[x-1][y]==0)
                             {
@@ -312,7 +312,7 @@ void controls(char s[][22],int temp[][22],int eating) //finally, the coolest par
                                 goto movecheck;
                             }
                         }
-                        else if(contr=='z')
+                        else if(contr=='d')
                         {
                             if(temp[x+1][y]==0)
                             {
