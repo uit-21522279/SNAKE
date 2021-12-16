@@ -140,7 +140,7 @@ void game()
         if(kbhit()) //checking if some key is pressed
         {
             contr=getch(); //if pressed, getting info about that key. this is needed for snake controls
-            if(contr=='0') pause(); //if 0, pauses game
+            if(contr=='s') pause(); //if 0, pauses game
             goto movemake; //starts making snake moves
         }
         else
@@ -447,7 +447,7 @@ void help()
     cout<<"|                                              |"<<endl;
     cout<<"|                    z - down                  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    0 - Pause                 |"<<endl;
+    cout<<"|                    s - Pause                 |"<<endl;
     cout<<"|                                              |"<<endl;
     cout<<" ---------------------------------------------- "<<endl<<endl<<endl;
     cout<<"Go back? [y/n]  ";
