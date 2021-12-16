@@ -455,6 +455,7 @@ void help()
     if(sel=='y') return;
     else system("cls");
     }
+}
 void options()
 {
     char sel;
