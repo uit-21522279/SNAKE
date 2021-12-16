@@ -488,21 +488,24 @@ void difficulty() //function for setting difficulty (how fast snake moves
     cout<<"                       2: Normal      "<<endl<<endl;
     cout<<"                       3: Hard        "<<endl<<endl;
     cout<<"                       4: Go back       "<<endl<<endl;    
-    cin>>sel
+    cin>>sel;
      if(sel=='1')
     {
         diff=0.5;
         system("cls");
+        return;
     }
     else if(sel=='2')
     {
         diff=0.1;
         system("cls");
+        return;
     }
     else if(sel=='3')
     {
         diff=0.05;
         system("cls");
+        return;
     }
     else if(sel=='4') return;
     else system("cls");
