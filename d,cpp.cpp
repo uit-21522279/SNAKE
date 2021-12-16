@@ -482,46 +482,28 @@ void difficulty() //function for setting difficulty (how fast snake moves
     while(true)
     {
     cout<<""<<endl<<endl;
-    cout<<"          C U R R E N T   D I F F I C U L T Y:"<<endl<<endl;
-    if(diff==1) cout<<"                         E A S Y"<<endl<<endl;
-    else if(diff==0.5) cout<<"                       N O R M A L"<<endl<<endl;
-    else if(diff==0.2) cout<<"                         H A R D"<<endl<<endl;
-    else if(diff==0.1) cout<<"                 S U P E R   H A R D"<<endl<<endl;
-    else if(diff==0.03) cout<<"                 I M P O S S I B L E"<<endl<<endl;
     cout<<"          C H O O S E   D I F F I C U L T Y :"<<endl<<endl;
     cout<<"                       1: Easy        "<<endl<<endl;
     cout<<"                       2: Normal      "<<endl<<endl;
     cout<<"                       3: Hard        "<<endl<<endl;
-    cout<<"                       4: Super Hard  "<<endl<<endl;
-    cout<<"                       5: Impossible  "<<endl<<endl<<endl<<endl;
-    cout<<"                       6: Go Back     "<<endl<<endl;
-    cin>>sel;
-    if(sel=='1')  //there are 5 ready difficulties
-    {
-        diff=1;
-        system("cls");
-    }
-    else if(sel=='2')
+    cout<<"                       4: Go back       "<<endl<<endl;    
+    cin>>sel
+     if(sel=='1')
     {
         diff=0.5;
         system("cls");
     }
-    else if(sel=='3')
-    {
-        diff=0.2;
-        system("cls");
-    }
-    else if(sel=='4')
+    else if(sel=='2')
     {
         diff=0.1;
         system("cls");
     }
-    else if(sel=='5')
+    else if(sel=='3')
     {
-        diff=0.03;
+        diff=0.05;
         system("cls");
     }
-    else if(sel=='6') return;
+    else if(sel=='4') return;
     else system("cls");
     }
 }
