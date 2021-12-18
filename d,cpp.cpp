@@ -369,7 +369,7 @@ void spawnFood(char s[][22],int & fx,int & fy)
 }
 
 bool gameover(char s[][40],int temp[][40]) 
-    int x,y,c=0;
+{  int x,y,c=0;
 
     for(x=0;x<50;x++)
     {
