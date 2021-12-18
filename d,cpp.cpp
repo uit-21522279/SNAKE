@@ -89,7 +89,7 @@ void table(char s[][40],int score)
         }
     }
     cout<<""<<endl;
-    cout<<"Your score: "<<score;
+    cout<<"Diem cua ban: "<<score;
 }
 
 void game()
