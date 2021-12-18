@@ -148,7 +148,7 @@ void game()
             {
                 for(y=1;y<21;y++)
                 {
-                    if(s[x][y]==(char)219)
+                    if(s[x][y]=='*')
                     {
                         chek[x][y]=1;
                     }
@@ -345,7 +345,7 @@ bool checkFood(char s[][22],int fx,int fy) //function for checking if snake has 
     else return false;
 }
 
-void spawnFood(char s[][22],int & fx,int & fy) //function for spawning new food
+void spawnFood(char s[][22],int & fx,int & fy)
 {
     //food spawning
         int i,j;
@@ -355,7 +355,7 @@ void spawnFood(char s[][22],int & fx,int & fy) //function for spawning new food
         {
             for(i=1;i<21;i++)
             {
-                if(s[j][i]!=(char)219 && s[j][i]!='o') //checks if there is something in generated value square
+                if(s[j][i]!=(char)219 && s[j][i]!='o')
                 {
                     s[fx][fy]=(char)219;
                     return;
@@ -393,8 +393,8 @@ bool gameover(char s[][22],int temp[][22]) //checking if snake has hit its tail 
     if(c==0) return false;
 }
 
-void endgame(int score,int highscore) //just some screens for certain actions
-{
+void endgame(int score,int highscore)
+{actions
     cout<<""<<endl<<endl;
     cout<<" ------------------------------------------------------------------------- "<<endl;
     cout<<"|    *****      *     *       * ******       ****  *       ****** ****    |"<<endl;
@@ -471,7 +471,7 @@ void options()
     }
 }
 
-void difficulty() //function for setting difficulty (how fast snake moves
+void difficulty()
 {
     char sel;
     system("cls");
@@ -506,7 +506,7 @@ void difficulty() //function for setting difficulty (how fast snake moves
     }
 }
 
-void pause() //pauses game
+void pause()
 {
     char c;
     cout<<""<<endl<<endl;
