@@ -341,26 +341,24 @@ bool checkFood(char s[][40],int fx,int fy)
     if(c==1) return true;
     else return false;
 }
-
-void spawnFood(char s[][22],int & fx,int & fy)
+void spawnFood(char s[][40],int & fx,int & fy) 
 {
-    //food spawning
         int i,j;
-        fx=(rand()%30)+1; //generates random value
-        fy=(rand()%20)+1;
-        for(j=1;j<31;j++)
+        fx=(rand()%48)+1; 
+        fy=(rand()%38)+1;
+        for(j=1;j<49;j++)
         {
-            for(i=1;i<21;i++)
+            for(i=1;i<39;i++)
             {
-                if(s[j][i]!=(char)219 && s[j][i]!='o')
+                if(s[j][i]!=(char)219 && s[j][i]!='o') 
                 {
-                    s[fx][fy]=(char)219;
+                    s[fx][fy]='+';
                     return;
                 }
                 else
                 {
-                    fx=(rand()%30)+1;
-                    fy=(rand()%20)+1;
+                    fx=(rand()%48)+1;
+                    fy=(rand()%38)+1;
                     i=1;
                     j=1;
                 }
