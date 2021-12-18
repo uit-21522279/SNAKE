@@ -8,21 +8,19 @@
 using namespace std;
 void menu();
 void game();
-void controls(char s[][22],int temp[][22],int eating);
-void credits();
-void table(char s[][22],int score);
-bool checkFood(char s[][22],int fx,int fy);
-void spawnFood(char s[][22],int & fx,int & fy);
-bool gameover(char s[][22],int temp[][22]);
+void controls(char s[][40],int temp[][40],int eating);
+void table(char s[][40],int score);
+bool checkFood(char s[][40],int fx,int fy);
+void spawnFood(char s[][40],int & fx,int & fy);
+bool gameover(char s[][40],int temp[][40]);
 void endgame(int score,int highscore);
 void help();
 void options();
 void difficulty();
 void pause();
-
 int lenght;
 char contr='n';
-int chek[32][22];
+int chek[50][40];
 double diff=0.5;
 int main()
 {
@@ -77,10 +75,10 @@ int main()
     return 0;
 }
 
-void table(char s[][22],int score)
+void table(char s[][40],int score)
 {
-    int x=32;
-    int y=22;
+    int x=50;
+    int y=40;
     int i,j;
     for(i=0;i<y;i++)
     {
@@ -95,24 +93,24 @@ void table(char s[][22],int score)
 }
 
 void game()
-{   char s[32][22];
-    int temp[32][22];
+{ char s[50][40];
+    int temp[50][40];
     int i,j,fx,fy,x,y,score=0,highscore=score;
     double k;
     int eating;
-    for(i=0;i<22;i++)
+    for(i=0;i<40;i++)
     {
-        for(j=0;j<32;j++)
+        for(j=0;j<50;j++)
         {
-            if(i==0 || i==21) s[j][i]='-';
-            if(i>0 && i<21) s[j][i]=' ';
-            if(j==0 || j==31) s[j][i]='|';
+            if(i==0 || i==39) s[j][i]='-';
+            if(i>0 && i<39) s[j][i]=' ';
+            if(j==0 || j==49) s[j][i]='|';
         }
     }
     spawnFood(s,fx,fy);
-    for(y=1;y<21;y++)
+    for(y=1;y<39;y++)
     {
-        for(x=1;x<31;x++)
+        for(x=1;x<49;x++)
         {
             temp[x][y]=0;
         }
@@ -144,11 +142,11 @@ void game()
         }
         movemake:
         {
-            for(x=1;x<31;x++)
+           for(x=1;x<49;x++)
             {
-                for(y=1;y<21;y++)
+                for(y=1;y<39;y++)
                 {
-                    if(s[x][y]=='*')
+                    if(s[x][y]==(char)219)
                     {
                         chek[x][y]=1;
                     }
@@ -187,31 +185,31 @@ void game()
         return;
     }
 }
-void controls(char s[][22],int temp[][22],int eating)
+void controls(char s[][40],int temp[][40],int eating)
 {
     int i,x,y;
     for(i=lenght;i>0;i--)
     {
         if(i==lenght)
         {
-            for(x=1;x<31;x++)
+            for(x=1;x<49;x++)
             {
-                for(y=1;y<21;y++)
+                for(y=1;y<39;y++)
                 {
                     if(temp[x][y]==i && s[x][y]==(char)219)
                     {
                         if(eating==0)
                         {
                             s[x][y]=' '; temp[x][y]=0;
-                            x=30;
-                            y=20;
+                            x=48;
+                            y=38;
                         }
                         else if(eating==1)
                         {
                             s[x][y]=(char)219; temp[x][y]=lenght+1;
                             lenght++;
-                            x=30;
-                            y=20;
+                           x=48;
+                           y=38;
                         }
                     }
                 }
@@ -219,24 +217,24 @@ void controls(char s[][22],int temp[][22],int eating)
         }
         else if(i>1 && i<lenght)
         {
-            for(x=1;x<31;x++)
+           for(x=1;x<49;x++)
             {
-                for(y=1;y<21;y++)
+                for(y=1;y<39;y++)
                 {
                     if(temp[x][y]==i && s[x][y]==(char)219)
                     {
                         temp[x][y]=i+1;
-                        x=30;
-                        y=20;
+                      x=48;
+                       y=38;
                     }
                 }
             }
         }
         else if(i==1)
         {
-            for(x=1;x<31;x++)
+            for(x=1;x<49;x++)
             {
-                for(y=1;y<21;y++)
+                for(y=1;y<39;y++)
                 {
                     if(temp[x][y]==i && s[x][y]=='o')
                     {
@@ -326,14 +324,13 @@ void controls(char s[][22],int temp[][22],int eating)
             }
         }
     }
-} //finally, the snake moves 🙂
-
-bool checkFood(char s[][22],int fx,int fy)
+}
+bool checkFood(char s[][40],int fx,int fy)
 {
     int x,y,c=0;
-    for(x=1;x<31;x++)
+    for(x=1;x<49;x++)
     {
-        for(y=1;y<21;y++)
+        for(y=1;y<39;y++)
         {
             if(s[x][y]=='o' && x==fx && y==fy)
             {
@@ -371,15 +368,14 @@ void spawnFood(char s[][22],int & fx,int & fy)
         }
 }
 
-bool gameover(char s[][22],int temp[][22])
-{
+bool gameover(char s[][40],int temp[][40]) 
     int x,y,c=0;
 
-    for(x=0;x<32;x++)
+    for(x=0;x<50;x++)
     {
-        for(y=0;y<22;y++)
+        for(y=0;y<40;y++)
         {
-            if((x==0 || x==31 || y==0 || y==21) && s[x][y]=='o')
+            if((x==0 || x==49 || y==0 || y==39) && s[x][y]=='o')
             {
                 c=1;
             }
@@ -389,12 +385,12 @@ bool gameover(char s[][22],int temp[][22])
             }
         }
     }
-    if(c==1) return true; //if yes, game ends
-    if(c==0) return false;
+    if(c==1) return true;
+if(c==0) return false;
 }
 
 void endgame(int score,int highscore)
-{
+{actions
     cout<<""<<endl<<endl;
     cout<<" ------------------------------------------------------------------------- "<<endl;
     cout<<"|    *****      *     *       * ******       ****  *       ****** ****    |"<<endl;
