@@ -404,8 +404,8 @@ void endgame(int score,int highscore)
     cout<<"|    *****  *       * *       * ******       ****      *    ***** *   *   |"<<endl;
     cout<<" ------------------------------------------------------------------------- "<<endl;
     cout<<""<<endl<<endl;
-    cout<<"                        Y O U R   S C O R E : "<<score<<endl<<endl;
-    cout<<"                        H I G H   S C O R E : "<<highscore<<endl;
+    cout<<"                        Đ I Ể M  C Ủ A  B Ạ N :   "<<score<<endl<<endl;
+    cout<<"                        Đ I Ể M  C A O  N H Ấ T : "<<highscore<<endl;
     cout<<""<<endl<<endl;
 }
 
@@ -423,9 +423,9 @@ void menu()
     cout<<" ------------------------------------------------------------------------------------------------------------------------------------------------------  "<<endl;
     cout<<""<<endl<<endl;
     cout<<"                     M E N U:    "<<endl<<endl;
-    cout<<"                  1: Bắt Đầu  "<<endl<<endl;
+    cout<<"                  1: Bắt Đầu     "<<endl<<endl;
     cout<<"                  2: Tuỳ Chọn    "<<endl<<endl;
-    cout<<"                  3: Thoát     "<<endl<<endl;
+    cout<<"                  3: Thoát       "<<endl<<endl;
 }
 
 void help()
