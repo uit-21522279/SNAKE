@@ -120,7 +120,7 @@ void game()
     }
     s[17][10]='o';
     s[16][10]=(char)219;
-    s[15][10]='*';
+    s[15][10]=(char)219;
 
     temp[15][10]=3; //numbering snake parts
     temp[16][10]=2;
@@ -149,7 +149,7 @@ void game()
             {
                 for(y=1;y<21;y++)
                 {
-                    if(s[x][y]=='*')
+                    if(s[x][y]==(char)219)
                     {
                         chek[x][y]=1; 
                     }
@@ -199,7 +199,7 @@ void controls(char s[][22],int temp[][22],int eating)
             {
                 for(y=1;y<21;y++)
                 {
-                    if(temp[x][y]==i && s[x][y]=='*')
+                    if(temp[x][y]==i && s[x][y]==(char)219)
                     {
                         if(eating==0) //if snake doesnt eat anything, the last part just disappears
                         {
@@ -209,7 +209,7 @@ void controls(char s[][22],int temp[][22],int eating)
                         }
                         else if(eating==1) //if snake eats food, it moves, but the last part stays there,
                         {                  //giving snake 1 more part
-                            s[x][y]='*'; temp[x][y]=lenght+1;
+                            s[x][y]=(char)219; temp[x][y]=lenght+1;
                             lenght++; //this new part number will be new length
                             x=30;
                             y=20;
@@ -244,7 +244,7 @@ void controls(char s[][22],int temp[][22],int eating)
                         movecheck:
                         if(contr!='z' && contr!='w' && contr!='a' && contr!='d') 
                         {                                                    
-                        s[x][y]='*'; temp[x][y]=i+1;
+                        s[x][y]=(char)219; temp[x][y]=i+1;
                         if(temp[x-1][y]==i+2) 
                         {
                             s[x+1][y]='o'; temp[x+1][y]=1;
@@ -270,7 +270,7 @@ void controls(char s[][22],int temp[][22],int eating)
                         {
                             if(temp[x][y-1]==0) 
                             {                  
-                            s[x][y]='*'; temp[x][y]=i+1;
+                            s[x][y]=(char)219; temp[x][y]=i+1;
                             s[x][y-1]='o'; temp[x][y-1]=1;
                             return;
                             }
@@ -284,7 +284,7 @@ void controls(char s[][22],int temp[][22],int eating)
                         {
                             if(temp[x][y+1]==0)
                             {
-                            s[x][y]='*'; temp[x][y]=i+1;
+                            s[x][y]=(char)219; temp[x][y]=i+1;
                             s[x][y+1]='o'; temp[x][y+1]=1;
                             return;
                             }
@@ -298,7 +298,7 @@ void controls(char s[][22],int temp[][22],int eating)
                         {
                             if(temp[x-1][y]==0)
                             {
-                            s[x][y]='*'; temp[x][y]=i+1;
+                            s[x][y]=(char)219; temp[x][y]=i+1;
                             s[x-1][y]='o'; temp[x-1][y]=1;
                             return;
                             }
@@ -312,7 +312,7 @@ void controls(char s[][22],int temp[][22],int eating)
                         {
                             if(temp[x+1][y]==0)
                             {
-                            s[x][y]='*'; temp[x][y]=i+1;
+                            s[x][y]=(char)219; temp[x][y]=i+1;
                             s[x+1][y]='o'; temp[x+1][y]=1;
                             return;
                             }
@@ -356,9 +356,9 @@ void spawnFood(char s[][22],int & fx,int & fy) //function for spawning new food
         {
             for(i=1;i<21;i++)
             {
-                if(s[j][i]!='*' && s[j][i]!='o') //checks if there is something in generated value square
+                if(s[j][i]!=(char)219 && s[j][i]!='o') //checks if there is something in generated value square
                 {
-                    s[fx][fy]='+';
+                    s[fx][fy]=(char)219;
                     return;
                 }
                 else //if there is something, generates again, and checks
