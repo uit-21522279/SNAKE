@@ -8,12 +8,12 @@
 using namespace std;
 void menu();
 void game();
-void controls(char s[][22],int temp[][22],int eating);
+void controls(char s[][40],int temp[][40],int eating);
 void credits();
-void table(char s[][22],int score);
-bool checkFood(char s[][22],int fx,int fy);
-void spawnFood(char s[][22],int & fx,int & fy);
-bool gameover(char s[][22],int temp[][22]);
+void table(char s[][40],int score);
+bool checkFood(char s[][40],int fx,int fy);
+void spawnFood(char s[][40],int & fx,int & fy);
+bool gameover(char s[][40],int temp[][40]);
 void endgame(int score,int highscore);
 void help();
 void options();
@@ -34,7 +34,7 @@ int main()
         if(i>0)
         {
             cout<<""<<endl;
-            cout<<"Bạn có muốn tiếp tục chơi ? [y/n]   ";
+            cout<<"Do you want to play again ? [y/n]   ";
             cin>>sl;
             if(sl=='y')
             {
@@ -423,9 +423,9 @@ void menu()
     cout<<" ------------------------------------------------------------------------------------------------------------------------------------------------------  "<<endl;
     cout<<""<<endl<<endl;
     cout<<"                     M E N U:    "<<endl<<endl;
-    cout<<"                  1: Bắt Đầu  "<<endl<<endl;
-    cout<<"                  2: Tuỳ Chọn    "<<endl<<endl;
-    cout<<"                  3: Thoát     "<<endl<<endl;
+    cout<<"                  1: Start Game  "<<endl<<endl;
+    cout<<"                  2: Options    "<<endl<<endl;
+    cout<<"                  3: Exit     "<<endl<<endl;
 }
 
 void help()
@@ -436,13 +436,13 @@ void help()
     {
     cout<<" ----------------------------------------------"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                     w - Lên                  |"<<endl;
+    cout<<"|                     w - up                   |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|            a - Qua trái        d - Qua phải  |"<<endl;
+    cout<<"|            a - left        d - right         |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    z - Xuống                 |"<<endl;
+    cout<<"|                    z - down                  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    s - Dừng                  |"<<endl;
+    cout<<"|                    s - Pause                 |"<<endl;
     cout<<"|                                              |"<<endl;
     cout<<" ---------------------------------------------- "<<endl<<endl<<endl;
     cout<<"Go back? [y/n]  ";
