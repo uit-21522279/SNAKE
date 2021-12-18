@@ -148,7 +148,7 @@ void game()
             {
                 for(y=1;y<21;y++)
                 {
-                    if(s[x][y]=='*')
+                    if(s[x][y]==(char)219)
                     {
                         chek[x][y]=1;
                     }
