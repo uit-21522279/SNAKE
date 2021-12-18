@@ -394,7 +394,7 @@ bool gameover(char s[][22],int temp[][22]) //checking if snake has hit its tail 
 }
 
 void endgame(int score,int highscore)
-{actions
+{
     cout<<""<<endl<<endl;
     cout<<" ------------------------------------------------------------------------- "<<endl;
     cout<<"|    *****      *     *       * ******       ****  *       ****** ****    |"<<endl;
