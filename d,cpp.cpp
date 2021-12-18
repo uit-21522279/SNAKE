@@ -8,12 +8,12 @@
 using namespace std;
 void menu();
 void game();
-void controls(char s[][40],int temp[][40],int eating);
+void controls(char s[][22],int temp[][22],int eating);
 void credits();
-void table(char s[][40],int score);
-bool checkFood(char s[][40],int fx,int fy);
-void spawnFood(char s[][40],int & fx,int & fy);
-bool gameover(char s[][40],int temp[][40]);
+void table(char s[][22],int score);
+bool checkFood(char s[][22],int fx,int fy);
+void spawnFood(char s[][22],int & fx,int & fy);
+bool gameover(char s[][22],int temp[][22]);
 void endgame(int score,int highscore);
 void help();
 void options();
@@ -34,7 +34,7 @@ int main()
         if(i>0)
         {
             cout<<""<<endl;
-            cout<<"Do you want to play again ? [y/n]   ";
+            cout<<"Bạn có muốn tiếp tục chơi ? [y/n]   ";
             cin>>sl;
             if(sl=='y')
             {
@@ -423,9 +423,9 @@ void menu()
     cout<<" ------------------------------------------------------------------------------------------------------------------------------------------------------  "<<endl;
     cout<<""<<endl<<endl;
     cout<<"                     M E N U:    "<<endl<<endl;
-    cout<<"                  1: Start Game  "<<endl<<endl;
-    cout<<"                  2: Options    "<<endl<<endl;
-    cout<<"                  3: Exit     "<<endl<<endl;
+    cout<<"                  1: Bắt Đầu  "<<endl<<endl;
+    cout<<"                  2: Tuỳ Chọn    "<<endl<<endl;
+    cout<<"                  3: Thoát     "<<endl<<endl;
 }
 
 void help()
@@ -436,13 +436,13 @@ void help()
     {
     cout<<" ----------------------------------------------"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                     w - up                   |"<<endl;
+    cout<<"|                     w - Lên                  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|            a - left        d - right         |"<<endl;
+    cout<<"|            a - Qua trái        d - Qua phải  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    z - down                  |"<<endl;
+    cout<<"|                    z - Xuống                 |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    s - Pause                 |"<<endl;
+    cout<<"|                    s - Dừng                  |"<<endl;
     cout<<"|                                              |"<<endl;
     cout<<" ---------------------------------------------- "<<endl<<endl<<endl;
     cout<<"Go back? [y/n]  ";
@@ -459,10 +459,10 @@ void options()
     {
     system("cls");
     cout<<""<<endl<<endl;
-    cout<<"                          O P T I O N S:      "<<endl<<endl;
-    cout<<"                       1: Choose Difficulty   "<<endl<<endl;
-    cout<<"                       2: Controls            "<<endl<<endl;
-    cout<<"                       3: Go Back             "<<endl<<endl;
+    cout<<"                          T U Ỳ C H Ọ N :      "<<endl<<endl;
+    cout<<"                       1: Chọn Độ Khó          "<<endl<<endl;
+    cout<<"                       2: Bảng Điều Khiển      "<<endl<<endl;
+    cout<<"                       3: Quay lại             "<<endl<<endl;
     cin>>sel;
     if(sel=='1') difficulty();
     else if(sel=='2') help();
@@ -477,11 +477,11 @@ void difficulty()
     system("cls");
     while(true)
     {
-    cout<<"          C H O O S E   D I F F I C U L T Y :"<<endl<<endl;
-    cout<<"                       1: Easy        "<<endl<<endl;
-    cout<<"                       2: Normal      "<<endl<<endl;
-    cout<<"                       3: Hard        "<<endl<<endl;
-    cout<<"                       4: Go Back     "<<endl<<endl;
+    cout<<"                   C H Ọ N Đ Ộ K H Ó :"<<endl<<endl;
+    cout<<"                       1: Dễ          "<<endl<<endl;
+    cout<<"                       2: Bình Thường "<<endl<<endl;
+    cout<<"                       3: Khó         "<<endl<<endl;
+    cout<<"                       4: Quay Lại    "<<endl<<endl;
     cin>>sel;
      if(sel=='1')
     {
@@ -510,7 +510,7 @@ void pause()
 {
     char c;
     cout<<""<<endl<<endl;
-    cout<<"Game paused. Do you want to continue? [y/n]  ";
+    cout<<"Kết thúc trò chơi. Bạn có muốn tiếp tục? [y/n]  ";
     ooo:
     cin>>c;
     if(c=='y') return;
