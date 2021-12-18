@@ -32,7 +32,7 @@ int main()
         if(i>0)
         {
             cout<<""<<endl;
-            cout<<"Bạn có muốn tiếp tục chơi ? [y/n]   ";
+            cout<<"Ban co muon tiep tuc choi? [y/n]   ";
             cin>>sl;
             if(sl=='y')
             {
@@ -398,8 +398,8 @@ void endgame(int score,int highscore)
     cout<<"|    *****  *       * *       * ******       ****      *    ***** *   *   |"<<endl;
     cout<<" ------------------------------------------------------------------------- "<<endl;
     cout<<""<<endl<<endl;
-    cout<<"                        Đ I Ể M  C Ủ A  B Ạ N :   "<<score<<endl<<endl;
-    cout<<"                        Đ I Ể M  C A O  N H Ấ T : "<<highscore<<endl;
+    cout<<"                        DIEM CUA BAN :   "<<score<<endl<<endl;
+    cout<<"                        DIEM CAO NHAT : "<<highscore<<endl;
     cout<<""<<endl<<endl;
 }
 
@@ -417,9 +417,9 @@ void menu()
     cout<<" ------------------------------------------------------------------------------------------------------------------------------------------------------  "<<endl;
     cout<<""<<endl<<endl;
     cout<<"                     M E N U:    "<<endl<<endl;
-    cout<<"                  1: Bắt Đầu     "<<endl<<endl;
-    cout<<"                  2: Tuỳ Chọn    "<<endl<<endl;
-    cout<<"                  3: Thoát       "<<endl<<endl;
+    cout<<"                  1: Bat dau    "<<endl<<endl;
+    cout<<"                  2: Tuy chon    "<<endl<<endl;
+    cout<<"                  3: Thoat       "<<endl<<endl;
 }
 
 void help()
@@ -430,16 +430,16 @@ void help()
     {
     cout<<" ----------------------------------------------"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                     w - Lên                  |"<<endl;
+    cout<<"|                     w - Len                  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|            a - Qua trái        d - Qua phải  |"<<endl;
+    cout<<"|            a - Qua trai        d - Qua phai  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    z - Xuống                 |"<<endl;
+    cout<<"|                    z - Xuong                 |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    s - Dừng                  |"<<endl;
+    cout<<"|                    s - Dung                  |"<<endl;
     cout<<"|                                              |"<<endl;
     cout<<" ---------------------------------------------- "<<endl<<endl<<endl;
-    cout<<"Go back? [y/n]  ";
+    cout<<"Quay lai? [y/n]  ";
     cin>>sel;
     if(sel=='y') return;
     else system("cls");
@@ -453,10 +453,10 @@ void options()
     {
     system("cls");
     cout<<""<<endl<<endl;
-    cout<<"                          T U Ỳ C H Ọ N :      "<<endl<<endl;
-    cout<<"                       1: Chọn Độ Khó          "<<endl<<endl;
-    cout<<"                       2: Bảng Điều Khiển      "<<endl<<endl;
-    cout<<"                       3: Quay lại             "<<endl<<endl;
+    cout<<"                          T U Y CHON :      "<<endl<<endl;
+    cout<<"                       1: Chon do kho         "<<endl<<endl;
+    cout<<"                       2: Bang dieu khien      "<<endl<<endl;
+    cout<<"                       3: Quay lai            "<<endl<<endl;
     cin>>sel;
     if(sel=='1') difficulty();
     else if(sel=='2') help();
@@ -471,11 +471,11 @@ void difficulty()
     system("cls");
     while(true)
     {
-    cout<<"                   C H Ọ N Đ Ộ K H Ó :"<<endl<<endl;
-    cout<<"                       1: Dễ          "<<endl<<endl;
-    cout<<"                       2: Bình Thường "<<endl<<endl;
-    cout<<"                       3: Khó         "<<endl<<endl;
-    cout<<"                       4: Quay Lại    "<<endl<<endl;
+    cout<<"                   C H ON DO KHO :"<<endl<<endl;
+    cout<<"                       1: De          "<<endl<<endl;
+    cout<<"                       2: Binh thuong "<<endl<<endl;
+    cout<<"                       3: Kho         "<<endl<<endl;
+    cout<<"                       4: Quay lai    "<<endl<<endl;
     cin>>sel;
      if(sel=='1')
     {
@@ -504,7 +504,7 @@ void pause()
 {
     char c;
     cout<<""<<endl<<endl;
-    cout<<"Kết thúc trò chơi. Bạn có muốn tiếp tục? [y/n]  ";
+    cout<<"Ket thuc tro choi. Ban co muon tiep tuc [y/n]  ";
     ooo:
     cin>>c;
     if(c=='y') return;
