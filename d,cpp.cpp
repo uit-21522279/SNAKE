@@ -273,8 +273,8 @@ void controls(char s[][22],int temp[][22],int eating)
                             s[x][y-1]='o'; temp[x][y-1]=1;
                             return;
                             }
-                            else //if not, we return to checking if control button is pressed
-                            {    //the new contr value will not be control button
+                            else 
+                            {    
                                 contr='n';
                                 goto movecheck;
                             }
@@ -328,7 +328,7 @@ void controls(char s[][22],int temp[][22],int eating)
     }
 } //finally, the snake moves 🙂
 
-bool checkFood(char s[][22],int fx,int fy) //function for checking if snake has eaten the food
+bool checkFood(char s[][22],int fx,int fy)
 {
     int x,y,c=0;
     for(x=1;x<31;x++)
@@ -360,7 +360,7 @@ void spawnFood(char s[][22],int & fx,int & fy)
                     s[fx][fy]=(char)219;
                     return;
                 }
-                else //if there is something, generates again, and checks
+                else
                 {
                     fx=(rand()%30)+1;
                     fy=(rand()%20)+1;
@@ -371,7 +371,7 @@ void spawnFood(char s[][22],int & fx,int & fy)
         }
 }
 
-bool gameover(char s[][22],int temp[][22]) //checking if snake has hit its tail or borders,
+bool gameover(char s[][22],int temp[][22])
 {
     int x,y,c=0;
 
