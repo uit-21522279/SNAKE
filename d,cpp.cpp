@@ -390,7 +390,7 @@ if(c==0) return false;
 }
 
 void endgame(int score,int highscore)
-{actions
+{
     cout<<""<<endl<<endl;
     cout<<" ------------------------------------------------------------------------- "<<endl;
     cout<<"|    *****      *     *       * ******       ****  *       ****** ****    |"<<endl;
