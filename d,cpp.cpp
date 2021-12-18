@@ -34,7 +34,7 @@ int main()
         if(i>0)
         {
             cout<<""<<endl;
-            cout<<"Do you want to play again ? [y/n]   ";
+            cout<<"Bạn có muốn tiếp tục chơi ? [y/n]   ";
             cin>>sl;
             if(sl=='y')
             {
@@ -394,7 +394,7 @@ bool gameover(char s[][22],int temp[][22]) //checking if snake has hit its tail 
 }
 
 void endgame(int score,int highscore)
-{
+{actions
     cout<<""<<endl<<endl;
     cout<<" ------------------------------------------------------------------------- "<<endl;
     cout<<"|    *****      *     *       * ******       ****  *       ****** ****    |"<<endl;
@@ -423,9 +423,9 @@ void menu()
     cout<<" ------------------------------------------------------------------------------------------------------------------------------------------------------  "<<endl;
     cout<<""<<endl<<endl;
     cout<<"                     M E N U:    "<<endl<<endl;
-    cout<<"                  1: Start Game  "<<endl<<endl;
-    cout<<"                  2: Options    "<<endl<<endl;
-    cout<<"                  3: Exit     "<<endl<<endl;
+    cout<<"                  1: Bắt Đầu  "<<endl<<endl;
+    cout<<"                  2: Tuỳ Chọn    "<<endl<<endl;
+    cout<<"                  3: Thoát     "<<endl<<endl;
 }
 
 void help()
@@ -436,13 +436,13 @@ void help()
     {
     cout<<" ----------------------------------------------"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                     w - up                   |"<<endl;
+    cout<<"|                     w - Lên                  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|            a - left        d - right         |"<<endl;
+    cout<<"|            a - Qua trái        d - Qua phải  |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    z - down                  |"<<endl;
+    cout<<"|                    z - Xuống                 |"<<endl;
     cout<<"|                                              |"<<endl;
-    cout<<"|                    s - Pause                 |"<<endl;
+    cout<<"|                    s - Dừng                  |"<<endl;
     cout<<"|                                              |"<<endl;
     cout<<" ---------------------------------------------- "<<endl<<endl<<endl;
     cout<<"Go back? [y/n]  ";
