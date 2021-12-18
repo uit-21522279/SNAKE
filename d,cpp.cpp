@@ -224,7 +224,7 @@ void controls(char s[][22],int temp[][22],int eating)
             {
                 for(y=1;y<21;y++)
                 {
-                    if(temp[x][y]==i && s[x][y]=='*')
+                    if(temp[x][y]==i && s[x][y]==(char)219)
                     {
                         temp[x][y]=i+1;
                         x=30;
