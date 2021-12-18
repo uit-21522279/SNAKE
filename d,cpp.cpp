@@ -8,7 +8,7 @@
 using namespace std;
 void menu();
 void game();
-void controls(char s[][22],int temp[][22],int eating);
+void controls(char s[][40],int temp[][40],int eating);
 void credits();
 void table(char s[][22],int score);
 bool checkFood(char s[][22],int fx,int fy);
