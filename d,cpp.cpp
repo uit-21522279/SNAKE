@@ -8,7 +8,7 @@
 using namespace std;
 void menu();
 void game();
-void controls(char s[][40],int temp[][40],int eating);
+void controls(char s[][22],int temp[][22],int eating);
 void credits();
 void table(char s[][22],int score);
 bool checkFood(char s[][22],int fx,int fy);
@@ -20,15 +20,15 @@ void options();
 void difficulty();
 void pause();
 
-int lenght; 
+int lenght;
 char contr='n';
 int chek[32][22];
-double diff=0.5; 
+double diff=0.5;
 int main()
 {
-    srand(time(0)); 
+    srand(time(0));
     int i;
-    char sl; 
+    char sl;
     for(i=0;i<9999;i++)
     {
         if(i>0)
@@ -43,15 +43,15 @@ int main()
             }
             else goto quit;
         }
-        start: 
+        start:
         {
-            menu(); 
+            menu();
         }
-        cin>>sl; 
+        cin>>sl;
         if(sl=='1')
         {
-            system("cls"); 
-            game(); 
+            system("cls");
+            game();
             i=1;
         }
         else if(sl=='2')
@@ -69,7 +69,7 @@ int main()
             goto start;
         }
     }
-    quit: //quits program
+    quit:
         {
             system("exit");
         }
@@ -77,8 +77,7 @@ int main()
     return 0;
 }
 
-
-void table(char s[][22],int score)  
+void table(char s[][22],int score)
 {
     int x=32;
     int y=22;
@@ -96,9 +95,9 @@ void table(char s[][22],int score)
 }
 
 void game()
-{   char s[32][22]; 
-    int temp[32][22]; 
-    int i,j,fx,fy,x,y,score=0,highscore=score; 
+{   char s[32][22];
+    int temp[32][22];
+    int i,j,fx,fy,x,y,score=0,highscore=score;
     double k;
     int eating;
     for(i=0;i<22;i++)
@@ -110,48 +109,48 @@ void game()
             if(j==0 || j==31) s[j][i]='|';
         }
     }
-    spawnFood(s,fx,fy); 
+    spawnFood(s,fx,fy);
     for(y=1;y<21;y++)
     {
         for(x=1;x<31;x++)
         {
-            temp[x][y]=0; 
-        }                 
+            temp[x][y]=0;
+        }
     }
     s[17][10]='o';
     s[16][10]=(char)219;
     s[15][10]=(char)219;
 
-    temp[15][10]=3; //numbering snake parts
+    temp[15][10]=3;
     temp[16][10]=2;
     temp[17][10]=1;
 
     system("cls");
     table(s,score);
-    lenght=3; 
-    while(true) 
+    lenght=3;
+    while(true)
     {
-        eating=0; 
+        eating=0;
         Sleep(diff*1000);
-        if(kbhit()) 
+        if(kbhit())
         {
-            contr=getch(); 
-            if(contr=='s') pause(); 
-            goto movemake; 
+            contr=getch();
+            if(contr=='s') pause();
+            goto movemake;
         }
         else
         {
-            goto movemake; 
+            goto movemake;
         }
         movemake:
         {
-            for(x=1;x<31;x++) 
+            for(x=1;x<31;x++)
             {
                 for(y=1;y<21;y++)
                 {
-                    if(s[x][y]==(char)219)
+                    if(s[x][y]=='*')
                     {
-                        chek[x][y]=1; 
+                        chek[x][y]=1;
                     }
                     else chek[x][y]=0;
                 }
@@ -168,14 +167,14 @@ void game()
                 controls(s,temp,eating);
             }
 
-            if(gameover(s,temp)==true) goto gameEnd; 
+            if(gameover(s,temp)==true) goto gameEnd;
             else
             {
                 goto LoopEnd;
             }
         }
 
-        LoopEnd: 
+        LoopEnd:
         {
             system("cls");
             table(s,score);
@@ -188,12 +187,12 @@ void game()
         return;
     }
 }
-void controls(char s[][22],int temp[][22],int eating) 
+void controls(char s[][22],int temp[][22],int eating)
 {
     int i,x,y;
-    for(i=lenght;i>0;i--) 
+    for(i=lenght;i>0;i--)
     {
-        if(i==lenght) 
+        if(i==lenght)
         {
             for(x=1;x<31;x++)
             {
@@ -201,16 +200,16 @@ void controls(char s[][22],int temp[][22],int eating)
                 {
                     if(temp[x][y]==i && s[x][y]==(char)219)
                     {
-                        if(eating==0) //if snake doesnt eat anything, the last part just disappears
+                        if(eating==0)
                         {
                             s[x][y]=' '; temp[x][y]=0;
                             x=30;
                             y=20;
                         }
-                        else if(eating==1) //if snake eats food, it moves, but the last part stays there,
-                        {                  //giving snake 1 more part
+                        else if(eating==1)
+                        {
                             s[x][y]=(char)219; temp[x][y]=lenght+1;
-                            lenght++; //this new part number will be new length
+                            lenght++;
                             x=30;
                             y=20;
                         }
@@ -218,7 +217,7 @@ void controls(char s[][22],int temp[][22],int eating)
                 }
             }
         }
-        else if(i>1 && i<lenght) 
+        else if(i>1 && i<lenght)
         {
             for(x=1;x<31;x++)
             {
@@ -233,7 +232,7 @@ void controls(char s[][22],int temp[][22],int eating)
                 }
             }
         }
-        else if(i==1) 
+        else if(i==1)
         {
             for(x=1;x<31;x++)
             {
@@ -242,13 +241,13 @@ void controls(char s[][22],int temp[][22],int eating)
                     if(temp[x][y]==i && s[x][y]=='o')
                     {
                         movecheck:
-                        if(contr!='z' && contr!='w' && contr!='a' && contr!='d') 
-                        {                                                    
+                        if(contr!='z' && contr!='w' && contr!='a' && contr!='d')
+                        {
                         s[x][y]=(char)219; temp[x][y]=i+1;
-                        if(temp[x-1][y]==i+2) 
+                        if(temp[x-1][y]==i+2)
                         {
                             s[x+1][y]='o'; temp[x+1][y]=1;
-                            return; 
+                            return;
                         }
                         else if(temp[x+1][y]==i+2)
                         {
@@ -268,8 +267,8 @@ void controls(char s[][22],int temp[][22],int eating)
                         }
                         else if(contr=='w')
                         {
-                            if(temp[x][y-1]==0) 
-                            {                  
+                            if(temp[x][y-1]==0)
+                            {
                             s[x][y]=(char)219; temp[x][y]=i+1;
                             s[x][y-1]='o'; temp[x][y-1]=1;
                             return;
@@ -327,7 +326,7 @@ void controls(char s[][22],int temp[][22],int eating)
             }
         }
     }
-} //finally, the snake moves :)
+} //finally, the snake moves 🙂
 
 bool checkFood(char s[][22],int fx,int fy) //function for checking if snake has eaten the food
 {
