@@ -78,7 +78,7 @@ int main()
 }
 
 
-void table(char s[][22],int score)  s
+void table(char s[][22],int score)  
 {
     int x=32;
     int y=22;
