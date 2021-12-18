@@ -119,7 +119,7 @@ void game()
         }                 
     }
     s[17][10]='o';
-    s[16][10]='*';
+    s[16][10]=(char)219;
     s[15][10]='*';
 
     temp[15][10]=3; //numbering snake parts
