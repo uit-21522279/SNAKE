@@ -75,7 +75,22 @@ bool checkFood(char s[][40],int fx,int fy)
 
 
 
-
+void table(char s[][40],int score)
+{
+    int x=50;
+    int y=40;
+    int i,j;
+    for(i=0;i<y;i++)
+    {
+        for(j=0;j<x;j++)
+        {
+            if(j<(x-1)) cout<<s[j][i];
+            if(j==(x-1)) cout<<s[j][i]<<endl;
+        }
+    }
+    cout<<""<<endl;
+    cout<<"Diem cua ban: "<<score;
+}
 
 
 
