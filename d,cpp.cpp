@@ -164,7 +164,7 @@ void game()
             {
                 controls(s,temp,eating);
             }
-
+Ì
             if(gameover(s,temp)==true) goto gameEnd;
             else
             {
@@ -327,19 +327,19 @@ void controls(char s[][40],int temp[][40],int eating)
 }
 bool checkFood(char s[][40],int fx,int fy)
 {
-    int x,y,c=0;
-    for(x=1;x<49;x++)
-    {
-        for(y=1;y<39;y++)
+  int x,y,c=0;
+  for(x=1;x<49;x++)
+  {
+     for(y=1;y<39;y++)
+     {
+        if(s[x][y]=='o' && x==fx && y==fy)
         {
-            if(s[x][y]=='o' && x==fx && y==fy)
-            {
-                c=1;
-            }
+           c=1;
         }
-    }
-    if(c==1) return true;
-    else return false;
+     }
+  }
+  if(c==1) return true;
+  else return false;
 }
 void spawnFood(char s[][40],int & fx,int & fy) 
 {
