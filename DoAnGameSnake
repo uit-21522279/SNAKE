@@ -46,6 +46,22 @@ bool checkFood(char s[][40],int fx,int fy)
   else return false;
 }
 
+void spawnFood(char s[][40],int & fx,int & fy)
+{
+     int i,j;
+     fx=(rand()%48)+1;
+     fy=(rand()%38)+1;
+     for(j=1;j<49;j++)
+     {
+        for(i=1;i<39;i++)
+        {
+           if(s[j][i]!=(char)219 && s[j][i]='o')
+           {
+              s[fx][fy]='+';
+              return;
+           }
+           else
+           
 
 
 
