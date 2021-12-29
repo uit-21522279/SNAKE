@@ -27,7 +27,7 @@ bool checkFood(char s[][40],int fx,int fy)
   else return false;
 }
 
-void spawnFood(char s[][40],int & fx,int % fy)
+
 
 
 
@@ -342,7 +342,7 @@ void table(char s[][40],int score)
 
 
 
-
+vvv
 
 
 
