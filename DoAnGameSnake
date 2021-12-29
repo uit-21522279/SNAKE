@@ -1,4 +1,23 @@
 #include<iostream>
+#include <cstdlib>
+#include <ctime>
+#include <conio.h>
+#include <windows.h>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+void menu();
+void game();
+void controls(char s[][40],int temp[][40],int eating);
+void table(char s[][40],int score);
+bool checkFood(char s[][40],int fx,int fy);
+void spawnFood(char s[][40],int & fx,int & fy);
+bool gameover(char s[][40],int temp[][40]);
+void endgame(int score,int highscore);
+void help();
+void options();
+void difficulty();
+void pause();
 int main()
 
 
