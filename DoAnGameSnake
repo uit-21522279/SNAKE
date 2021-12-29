@@ -502,21 +502,6 @@ bool checkFood(char s[][40],int fx,int fy)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {
     char c;
     cout<<""<<endl<<endl;
@@ -526,3 +511,17 @@ bool checkFood(char s[][40],int fx,int fy)
     if(c=='y') return;
     else goto ooo;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
