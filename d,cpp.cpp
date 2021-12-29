@@ -511,3 +511,4 @@ void pause()
     if(c=='y') return;
     else goto ooo;
 }
+chào mng
