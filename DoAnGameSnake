@@ -84,9 +84,27 @@ void spawnFood(char s[][40],int & fx,int & fy)
 
 
 
-
-
-
+void options(){
+  char sel;
+  system("cls");
+  while (true)
+ {
+    system("cls");
+    cout<<" "<<endl<<endl;
+    cout<<"        O P T I O N S            "<<endl<<enld;
+    cout<<"     1: CHOOSE DIFFICULTY LEVEL  "<<endl<<endl;
+    cout<<"     2: CONTROLS                 "<<endl<<endl;
+    cout<<"     3: GO BACK                  "<<endl<<endl;
+    cin>>sel;
+    if ( sel=='1') difficulty();
+    else if (sel=='2') help();
+    else if ( sel=='3') return;
+    else system("cls");
+    }
+    
+    
+   
+   
 
 
 
