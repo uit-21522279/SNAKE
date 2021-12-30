@@ -61,6 +61,15 @@ void spawnFood(char s[][40],int & fx,int & fy)
               return;
            }
            else
+           {
+              fx=(rand()%48+1);
+              fy=(rand()%48+1);
+              i=1;
+              j=1;
+           }
+        }
+     }
+}
            
 
 
@@ -377,7 +386,7 @@ void table(char s[][40],int score)
 
 
 
-vvv
+
 
 
 
