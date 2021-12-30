@@ -126,7 +126,7 @@ void table(char s[][40],int score)
         }
     }
     cout<<""<<endl;
-    cout<<"Diem cua ban: "<<score;
+    cout<<"Your score: "<<score;
 }
 
 
@@ -377,7 +377,7 @@ void table(char s[][40],int score)
 
 
 
-vvv
+
 
 
 
@@ -557,7 +557,7 @@ vvv
 {
     char c;
     cout<<""<<endl<<endl;
-    cout<<"Ket thuc tro choi. Ban co muon tiep tuc [y/n]  ";
+    cout<<"Game over. Do you want to play again? [y/n]  ";
     ooo:
     cin>>c;
     if(c=='y') return;
