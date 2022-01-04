@@ -113,7 +113,18 @@ void options(){
     
     
    
-   
+   void pause()
+{
+    char c;
+    cout<<""<<endl<<endl;
+    cout<<"Ket thuc tro choi. Ban co muon tiep tuc [y/n]  ";
+    ooo:
+    cin>>c;
+    if(c=='y') return;
+    else goto ooo;
+}
+
+
 
 
 
