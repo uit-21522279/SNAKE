@@ -19,7 +19,146 @@ void options();
 void difficulty();
 void pause();
 int main()
-
+void controls(char s[][40],int temp[][40],int eating)
+{
+    int i,x,y;
+    for(i=lenght;i>0;i--)
+    {
+        if(i==lenght)
+        {
+            for(x=1;x<49;x++)
+            {
+                for(y=1;y<39;y++)
+                {
+                    if(temp[x][y]==i && s[x][y]==(char)219)
+                    {
+                        if(eating==0)
+                        {
+                            s[x][y]=' '; temp[x][y]=0;
+                            x=48;
+                            y=38;
+                        }
+                        else if(eating==1)
+                        {
+                            s[x][y]=(char)219; temp[x][y]=lenght+1;
+                            lenght++;
+                           x=48;
+                           y=38;
+                        }
+                    }
+                }
+            }
+        }
+        else if(i>1 && i<lenght)
+        {
+           for(x=1;x<49;x++)
+            {
+                for(y=1;y<39;y++)
+                {
+                    if(temp[x][y]==i && s[x][y]==(char)219)
+                    {
+                        temp[x][y]=i+1;
+                      x=48;
+                       y=38;
+                    }
+                }
+            }
+        }
+        else if(i==1)
+        {
+            for(x=1;x<49;x++)
+            {
+                for(y=1;y<39;y++)
+                {
+                    if(temp[x][y]==i && s[x][y]=='o')
+                    {
+                        movecheck:
+                        if(contr!='z' && contr!='w' && contr!='a' && contr!='d')
+                        {
+                        s[x][y]=(char)219; temp[x][y]=i+1;
+                        if(temp[x-1][y]==i+2)
+                        {
+                            s[x+1][y]='o'; temp[x+1][y]=1;
+                            return;
+                        }
+                        else if(temp[x+1][y]==i+2)
+                        {
+                            s[x-1][y]='o'; temp[x-1][y]=1;
+                            return;
+                        }
+                        else if(temp[x][y+1]==i+2)
+                        {
+                            s[x][y-1]='o'; temp[x][y-1]=1;
+                            return;
+                        }
+                        else if(temp[x][y-1]==i+2)
+                        {
+                            s[x][y+1]='o'; temp[x][y+1]=1;
+                            return;
+                        }
+                        }
+                        else if(contr=='w')
+                        {
+                            if(temp[x][y-1]==0)
+                            {
+                            s[x][y]=(char)219; temp[x][y]=i+1;
+                            s[x][y-1]='o'; temp[x][y-1]=1;
+                            return;
+                            }
+                            else
+                            {
+                                contr='n';
+                                goto movecheck;
+                            }
+                        }
+                        else if(contr=='z')
+                        {
+                            if(temp[x][y+1]==0)
+                            {
+                            s[x][y]=(char)219; temp[x][y]=i+1;
+                            s[x][y+1]='o'; temp[x][y+1]=1;
+                            return;
+                            }
+                            else
+                            {
+                                contr='n';
+                                goto movecheck;
+                            }
+                        }
+                        else if(contr=='a')
+                        {
+                            if(temp[x-1][y]==0)
+                            {
+                            s[x][y]=(char)219; temp[x][y]=i+1;
+                            s[x-1][y]='o'; temp[x-1][y]=1;
+                            return;
+                            }
+                            else
+                            {
+                                contr='n';
+                                goto movecheck;
+                            }
+                        }
+                        else if(contr=='d')
+                        {
+                            if(temp[x+1][y]==0)
+                            {
+                            s[x][y]=(char)219; temp[x][y]=i+1;
+                            s[x+1][y]='o'; temp[x+1][y]=1;
+                            return;
+                            }
+                            else
+                            {
+                                contr='n';
+                                goto movecheck;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 
